@@ -13,16 +13,12 @@ public class NodeContainer {
 
 
     public NodeContainer(){
-        InputStream input = System.in;
-        InputStreamReader reader = new InputStreamReader(input);
-        BufferedReader br = new BufferedReader(reader);
+        this.input = System.in;
+        this.reader = new InputStreamReader(input);
+        this.br = new BufferedReader(reader);
     }
 
     public void closeStreams() throws IOException {
-
-        InputStream input = System.in;
-        InputStreamReader reader = new InputStreamReader(input);
-        BufferedReader br = new BufferedReader(reader);
 
         this.input.close();
         this.reader.close();
@@ -31,13 +27,9 @@ public class NodeContainer {
 
     void addNode() throws IOException {
 
-        InputStream input = System.in;
-        InputStreamReader reader = new InputStreamReader(input);
-        BufferedReader br = new BufferedReader(reader);
-
         System.out.println("What is the property of this node?");
 
-        String prop = br.readLine();
+        String prop = this.br.readLine();
         Node newNode = new Node(prop);
         newNode.tail = null;
 
@@ -68,13 +60,9 @@ public class NodeContainer {
 
     public void searchNode() throws IOException, NullPointerException {
 
-        InputStream input = System.in;
-        InputStreamReader reader = new InputStreamReader(input);
-        BufferedReader br = new BufferedReader(reader);
-
         System.out.println("What index are you looking for?");
 
-        int indexChoice = Integer.parseInt(br.readLine());
+        int indexChoice = Integer.parseInt(this.br.readLine());
         Node current = head;
         while (current.getIndex() != indexChoice) {
             current = current.tail;

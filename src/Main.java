@@ -10,10 +10,9 @@ public class Main {
             test.addNode();
             test.addNode();
             test.addNode();
-
-            test.printAllNodes();
-
-            test.removeLastNode();
+            test.addNode();
+            test.addNode();
+            test.addNode();
 
             test.printAllNodes();
         } catch (IOException e) {
@@ -21,10 +20,12 @@ public class Main {
         }
 
         try {
+           // test.addNodeInPosition();
+            test.printAllNodes();
             test.searchNode();
         } catch (NullPointerException | IOException npe) {
             System.out.println("there isn't a node with that index");
-        }finally {
+        } finally {
             try {
                 test.closeStreams();
             } catch (IOException e) {
